@@ -10,6 +10,7 @@ class GenreSerializer(serializers.ModelSerializer):
 
 class BookSerializer(serializers.ModelSerializer):
   genres = serializers.StringRelatedField(many=True, read_only=True)
+  author = serializers.StringRelatedField(read_only=True)
   class Meta:
     model = Book
     fields = '__all__'
